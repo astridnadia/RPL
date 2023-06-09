@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TableResevationStatus">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="279dp"
+        android:background="#046C42"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_5_2"
+        android:layout_width="match_parent"
+        android:layout_height="483dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/rectangle_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Welcome!"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Pick your table here"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/TV_statusMeja2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: Tersedia"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="663dp" />
+
+    <TextView
+        android:id="@+id/TV_statusMeja1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: Tersedia"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="651dp" />
+
+    <TextView
+        android:id="@+id/TV_capacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kapasitas: 8 Orang"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="575dp" />
+
+    <TextView
+        android:id="@+id/TV_capacity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kapasitas: 8 Orang"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="575dp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:fillViewport="true"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/view2_in"
+                    android:layout_width="341dp"
+                    android:layout_height="352dp"
+                    android:layout_marginTop="-100dp"
+                    android:background="@drawable/bg_shadow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="363dp"
+                    android:layout_height="194dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/outdoor" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Lokasi Outdoor 1"
+                    android:textColor="#454444"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Fasilitas:"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Meja Panjang 4 - 6 orang\n2 Kursi Panjang setiap meja\nAtap"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="*min reservasi 20 orang"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="*min order 12K/org"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Kapasitas max"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="50"
+                    android:textColor="#3E3E3E"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:text="org"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="Penuh"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <View
+                    android:id="@+id/ellipse_2"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/elipse_2"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <Button
+                    android:id="@+id/button_Meja1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#046C42"
+                    android:text="Reservasi"
+                    android:visibility="visible"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view2_in"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in" />
+
+                <ImageView
+                    android:id="@+id/imageView4_penuh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10"
+                    app:srcCompat="@drawable/checklist1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button_Meja2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#046C42"
+                    android:text="Reservasi"
+                    android:visibility="visible"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view2_in2"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in2"/>
+
+                <View
+                    android:id="@+id/view2_in2"
+                    android:layout_width="341dp"
+                    android:layout_height="352dp"
+                    android:layout_marginTop="-100dp"
+                    android:background="@drawable/bg_shadow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5_2" />
+
+                <ImageView
+                    android:id="@+id/imageView5_2"
+                    android:layout_width="363dp"
+                    android:layout_height="194dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/indoor" />
+
+                <TextView
+                    android:id="@+id/textView4_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Lokasi Indoor 1"
+                    android:textColor="#454444"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5_2" />
+
+                <TextView
+                    android:id="@+id/textView5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Fasilitas:"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4_2" />
+
+                <TextView
+                    android:id="@+id/textView6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Meja Panjang 4 - 6 orang\n2 Kursi Panjang setiap meja"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5_2" />
+
+                <TextView
+                    android:id="@+id/textView7_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="*min reservasi 10 orang"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6_2" />
+
+                <TextView
+                    android:id="@+id/textView8_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="*min order 12K/org"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7_2" />
+
+                <TextView
+                    android:id="@+id/textView9_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Kapasitas max"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5_2" />
+
+                <TextView
+                    android:id="@+id/textView10_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="20"
+                    android:textColor="#3E3E3E"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/textView11_2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9_2" />
+
+                <TextView
+                    android:id="@+id/textView11_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:text="org"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9_2" />
+
+                <TextView
+                    android:id="@+id/textView12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="Penuh"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10_2" />
+
+                <View
+                    android:id="@+id/ellipse_2_2"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/elipse_2"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
+                    app:layout_constraintStart_toEndOf="@+id/textView12_2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10_2" />
+
+
+
+                <ImageView
+                    android:id="@+id/imageView4_penuh_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
+                    app:layout_constraintStart_toEndOf="@+id/textView12_2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10_2"
+                    app:srcCompat="@drawable/checklist1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
