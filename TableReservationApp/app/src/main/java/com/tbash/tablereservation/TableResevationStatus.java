@@ -104,6 +104,7 @@ public class TableResevationStatus extends AppCompatActivity {
         intentForFormReservStat.putExtra("date",date);
         intentForFormReservStat.putExtra("time",time);
         startActivity(intentForFormReservStat);
+        finish();
     }
 
     public boolean statusMejaB(String nomorMeja, String date, String time){

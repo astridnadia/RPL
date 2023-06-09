@@ -9,9 +9,11 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -31,6 +33,7 @@ import java.util.Random;
 public class FormReservation extends AppCompatActivity {
 
     EditText namaPemesan_et, kontakPemesan_et, uangMuka_et;
+    TextView date_et,time_et;
     Button pesan_btn;
     String namaPemesan, kontakPemesan, dateMeja,timeMeja,nomor_meja, passReserve;
     Integer uangMuka;
@@ -53,16 +56,23 @@ public class FormReservation extends AppCompatActivity {
         kontakPemesan_et=findViewById(R.id.editTextPhone);
         uangMuka_et=findViewById(R.id.editTextUangMuka);
         pesan_btn=findViewById(R.id.button_Pesan);
+        date_et=findViewById(R.id.editTextDate);
+        time_et=findViewById(R.id.editTextTime);
+        date_et.setText(dateMeja);
+        time_et.setText(timeMeja);
 
         pesan_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getDataPemesan();
-                passReserve=getRandomString(5);
-                //addDataReserv(nomor_meja,namaPemesan,kontakPemesan,uangMuka,"Pengajuan",dateMeja,timeMeja,passReserve);
-                saveDataFmServer("http://192.168.43.62/Android/syncReservation.php?mode=simpan");
-                openUserReservStatAct();
-
+                if (TextUtils.isEmpty(namaPemesan_et.getText().toString()) || TextUtils.isEmpty(kontakPemesan_et.getText().toString()) || TextUtils.isEmpty(uangMuka_et.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+                }else {
+                    getDataPemesan();
+                    passReserve = getRandomString(5);
+                    //addDataReserv(nomor_meja,namaPemesan,kontakPemesan,uangMuka,"Pengajuan",dateMeja,timeMeja,passReserve);
+                    saveDataFmServer("http://192.168.43.62/Android/syncReservation.php?mode=simpan");
+                    openUserReservStatAct();
+                }
             };
         });
 
@@ -84,6 +94,7 @@ public class FormReservation extends AppCompatActivity {
         intentForUserReservStat.putExtra("time",timeMeja);
         intentForUserReservStat.putExtra("passReserve",passReserve);
         startActivity(intentForUserReservStat);
+        finish();
     }
 
     public void addDataReserv(String nomorMeja, String namaReserver, String kontakReserver, Integer dpReserver, String statusReservation, String dateReservation, String timeReservation, String passReserve){

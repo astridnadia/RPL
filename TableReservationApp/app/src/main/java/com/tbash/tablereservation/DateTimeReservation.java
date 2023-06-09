@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -63,7 +64,14 @@ public class DateTimeReservation extends AppCompatActivity {
             public void onClick(View view) {
                 dateReserv=tv1_date.getText().toString();
                 timeReserv=tv2_time.getText().toString();
-                openTableReservAct();
+
+                if (TextUtils.isEmpty(dateReserv) || TextUtils.isEmpty(timeReserv)) {
+                    Toast.makeText(getApplicationContext(), "Please select date and time", Toast.LENGTH_SHORT).show();
+                } else {
+                    openTableReservAct();
+                }
+
+                //openTableReservAct();
             }
         });
 
@@ -101,6 +109,7 @@ public class DateTimeReservation extends AppCompatActivity {
         intentForTableReserv.putExtra("date",dateReserv);
         intentForTableReserv.putExtra("time",timeReserv);
         startActivity(intentForTableReserv);
+        finish();
     }
 
 }

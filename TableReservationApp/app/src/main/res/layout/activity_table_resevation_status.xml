@@ -273,19 +273,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/button_Meja2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:backgroundTint="#046C42"
-                    android:text="Reservasi"
-                    android:visibility="visible"
-                    app:cornerRadius="20dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2_in2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
-                    app:layout_constraintStart_toStartOf="@+id/view2_in2"/>
-
                 <View
                     android:id="@+id/view2_in2"
                     android:layout_width="341dp"
@@ -422,6 +409,18 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView10_2" />
 
 
+                <Button
+                    android:id="@+id/button_Meja2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#046C42"
+                    android:text="Reservasi"
+                    android:visibility="visible"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view2_in2"
+                    app:layout_constraintEnd_toEndOf="@+id/view2_in2"
+                    app:layout_constraintStart_toStartOf="@+id/view2_in2" />
 
                 <ImageView
                     android:id="@+id/imageView4_penuh_2"

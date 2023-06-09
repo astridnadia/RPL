@@ -32,7 +32,7 @@ public class PassCodeLogin extends AppCompatActivity {
     EditText codepassET;
     String codePass;
     DataBaseHelper mDataBaseHelper;
-    public boolean checking;
+    boolean checking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +51,10 @@ public class PassCodeLogin extends AppCompatActivity {
                 checkStatusFMServer("http://192.168.43.62/Android/syncReservation.php?mode=cekStatus", codePass);
 
                 //checking=checkPassCode(codePass);
-                if(checking){
-                    openUserReservStatAct();
-                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                if(checking==true){
+                    //openUserReservStatAct();
                 }else {
-                    Toast.makeText(getApplicationContext(), "wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Tunggu Sebentar", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -87,18 +86,34 @@ public class PassCodeLogin extends AppCompatActivity {
                 try {
                     JSONObject jsonRootObject=new JSONObject(response);
                     JSONArray jsonArray=jsonRootObject.optJSONArray("result");
-                    JSONObject jsonObject=jsonArray.getJSONObject(0);
+//                    JSONObject jsonObject=jsonArray.getJSONObject(0);
+//
+//                    String id_reservasi=jsonObject.optString("ID_reservasi").trim();
+//                    if(id_reservasi!=null){
+//                        checking=true;
+//                    }else {
+//                        checking=false;
+//                        Toast.makeText(PassCodeLogin.this,"sorry wrong",Toast.LENGTH_SHORT).show();
+//                    }
 
-                    String id_reservasi=jsonObject.optString("ID_reservasi").trim();
-                    //Toast.makeText(PassCodeLogin.this,id_reservasi,Toast.LENGTH_SHORT).show();
-                    if(id_reservasi!=null){
-                        checking=true;
-                    }else {
-                        checking=false;
-                        Toast.makeText(PassCodeLogin.this,"sorry wrong",Toast.LENGTH_SHORT).show();
+                    if (jsonArray != null && jsonArray.length() > 0) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+                        String id_reservasi = jsonObject.optString("ID_reservasi").trim();
+                        if (!id_reservasi.equals("null")) {
+                            // The id_reservasi is not empty or null, perform your actions here
+                            checking=true;
+                            openUserReservStatAct();
+                        } else {
+                            // The id_reservasi is empty or null, handle the case accordingly
+                            checking=false;
+                            Toast.makeText(PassCodeLogin.this,"Maaf kode salah",Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        // The jsonArray is empty or null, handle the case accordingly
+
+                        //Toast.makeText(PassCodeLogin.this,"sorry wrong",Toast.LENGTH_SHORT).show();
                     }
-
-                    //Toast.makeText(PassCodeLogin.this,status,Toast.LENGTH_SHORT).show();
 
                 }catch (JSONException e){
                     e.printStackTrace();

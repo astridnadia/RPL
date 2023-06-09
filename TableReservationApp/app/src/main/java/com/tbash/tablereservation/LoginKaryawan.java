@@ -37,5 +37,6 @@ public class LoginKaryawan extends AppCompatActivity {
     public void openDataReservAct(){
         Intent intentForDataReserv=new Intent(this, ReservationList.class);
         startActivity(intentForDataReserv);
+        finish();
     }
 }
