@@ -27,6 +27,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * class untuk melakukan validasi status pengajuan reservasi dari user oleh karyawan
+ */
 public class ReservationList extends AppCompatActivity {
 
     TableLayout tableReservation;
@@ -47,6 +51,9 @@ public class ReservationList extends AppCompatActivity {
         ambilDataFmServer("http://192.168.43.62/Android/syncReservation.php?mode=baca");
     }
 
+    /**
+     * mendapatkan data dari database lokal telepon, tidak digunakan di versi terbaru
+     */
     public void generateRow(){
         Cursor data = mDataBaseHelper.getAllData();
 
@@ -75,9 +82,6 @@ public class ReservationList extends AppCompatActivity {
         for (int i=0; i<listDataID.size();i++){
             TableRow tbrow=new TableRow(this);
 
-//            TextView tv_ID= new TextView(this);
-//            tv_ID.setText(listDataID.get(i).toString());
-//            tbrow.addView(tv_ID);
 
             TextView tv_NomorMeja= new TextView(this);
             tv_NomorMeja.setText(listNomor.get(i));
@@ -158,9 +162,10 @@ public class ReservationList extends AppCompatActivity {
     }
 
 
-
-
-
+    /**
+     * method untuk mengambil data reserver dari database server
+     * @param url
+     */
     public void ambilDataFmServer(String url){
             StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
@@ -195,9 +200,6 @@ public class ReservationList extends AppCompatActivity {
                         for (int i=0; i<listDataID.size();i++){
                             TableRow tbrow=new TableRow(getApplicationContext());
 
-//            TextView tv_ID= new TextView(this);
-//            tv_ID.setText(listDataID.get(i).toString());
-//            tbrow.addView(tv_ID);
 
                             TextView tv_NomorMeja= new TextView(getApplicationContext());
                             tv_NomorMeja.setText(listNomor.get(i));
@@ -277,12 +279,6 @@ public class ReservationList extends AppCompatActivity {
                             tableReservation.addView(tbrow);
                         }
 
-                       // JSONObject jsonObject=jsonArray.getJSONObject(0);
-
-                        //String a=jsonObject.optString("nomor_meja_reservasi").trim();
-
-                        //namaMejaTV.setText(a);
-
                     }catch (JSONException e){
                         e.printStackTrace();
                     }
@@ -308,6 +304,12 @@ public class ReservationList extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Method untuk mengganti status pengajuan reservasi
+     * @param url
+     * @param passButton
+     */
     public void changeDataStatusServer(String url, String passButton){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

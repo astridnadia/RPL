@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * class untuk login karyawan menuju ke aktivitas validasi status reservasi
+ */
 public class LoginKaryawan extends AppCompatActivity {
 
     EditText passKaryawan_et;
@@ -34,6 +37,9 @@ public class LoginKaryawan extends AppCompatActivity {
 
     }
 
+    /**
+     * method untuk pergi ke database reservasi untuk melakukan validasi
+     */
     public void openDataReservAct(){
         Intent intentForDataReserv=new Intent(this, ReservationList.class);
         startActivity(intentForDataReserv);

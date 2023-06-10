@@ -26,6 +26,9 @@ import java.util.Map;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+/**
+ * class untuk melakukan input pass kode yang diterima user untuk mengecek status aktivasi
+ */
 public class PassCodeLogin extends AppCompatActivity {
 
     Button checkPassCode_btn;
@@ -64,6 +67,11 @@ public class PassCodeLogin extends AppCompatActivity {
 
     }
 
+    /**
+     * cek kode dengan databse lokal, digunakan diversi lawas
+     * @param passReserve
+     * @return
+     */
     public boolean checkPassCode(String passReserve){
         Cursor data=mDataBaseHelper.getDataUser(passReserve);
         if (data.getCount()>0){
@@ -73,12 +81,20 @@ public class PassCodeLogin extends AppCompatActivity {
         }
     }
 
+    /**
+     * method untuk pergi ke aktifitas selanjutnya yaitu mengecek status reservasi
+     */
     public void openUserReservStatAct(){
         Intent intentForUserReservStat=new Intent(this, UserReservationStatus.class);
         intentForUserReservStat.putExtra("passReserve",codePass);
         startActivity(intentForUserReservStat);
     }
 
+    /**
+     * method untuk memeriksa ketersediaan pass code di database
+     * @param url
+     * @param passButton
+     */
     public void checkStatusFMServer(String url, String passButton){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -86,32 +102,19 @@ public class PassCodeLogin extends AppCompatActivity {
                 try {
                     JSONObject jsonRootObject=new JSONObject(response);
                     JSONArray jsonArray=jsonRootObject.optJSONArray("result");
-//                    JSONObject jsonObject=jsonArray.getJSONObject(0);
-//
-//                    String id_reservasi=jsonObject.optString("ID_reservasi").trim();
-//                    if(id_reservasi!=null){
-//                        checking=true;
-//                    }else {
-//                        checking=false;
-//                        Toast.makeText(PassCodeLogin.this,"sorry wrong",Toast.LENGTH_SHORT).show();
-//                    }
 
                     if (jsonArray != null && jsonArray.length() > 0) {
                         JSONObject jsonObject = jsonArray.getJSONObject(0);
 
                         String id_reservasi = jsonObject.optString("ID_reservasi").trim();
                         if (!id_reservasi.equals("null")) {
-                            // The id_reservasi is not empty or null, perform your actions here
                             checking=true;
                             openUserReservStatAct();
                         } else {
-                            // The id_reservasi is empty or null, handle the case accordingly
                             checking=false;
                             Toast.makeText(PassCodeLogin.this,"Maaf kode salah",Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        // The jsonArray is empty or null, handle the case accordingly
-
                         //Toast.makeText(PassCodeLogin.this,"sorry wrong",Toast.LENGTH_SHORT).show();
                     }
 

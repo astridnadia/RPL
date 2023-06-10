@@ -30,6 +30,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * class untuk mengisi data diri kelengakapan reservasi
+ */
 public class FormReservation extends AppCompatActivity {
 
     EditText namaPemesan_et, kontakPemesan_et, uangMuka_et;
@@ -78,12 +81,18 @@ public class FormReservation extends AppCompatActivity {
 
     }
 
+    /**
+     * Method untuk mendapatkan input data diri user
+     */
     public void getDataPemesan(){
         this.namaPemesan=namaPemesan_et.getText().toString();
         this.kontakPemesan=kontakPemesan_et.getText().toString();
         this.uangMuka=Integer.parseInt(uangMuka_et.getText().toString());
     }
 
+    /**
+     * method untuk membuka aktifitas tampilan status pengajuan reservasi
+     */
     public void openUserReservStatAct(){
         Intent intentForUserReservStat=new Intent(this, UserReservationStatus.class);
         intentForUserReservStat.putExtra("nomorMeja",nomor_meja);
@@ -97,10 +106,22 @@ public class FormReservation extends AppCompatActivity {
         finish();
     }
 
+
+    /**
+     * method untuk memasukkan data ke database lokal telepon, versi ini belum digunakan
+     * @param nomorMeja
+     * @param namaReserver
+     * @param kontakReserver
+     * @param dpReserver
+     * @param statusReservation
+     * @param dateReservation
+     * @param timeReservation
+     * @param passReserve
+     */
     public void addDataReserv(String nomorMeja, String namaReserver, String kontakReserver, Integer dpReserver, String statusReservation, String dateReservation, String timeReservation, String passReserve){
         this.insertData= mDataBaseHelper.addData(nomorMeja,namaReserver,kontakReserver,dpReserver,statusReservation,dateReservation,timeReservation, passReserve);
         if (insertData) {
-            Toast.makeText(this, "Data successfullt inserted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sukses diajukan", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "something wrong", Toast.LENGTH_SHORT).show();
         }
@@ -108,6 +129,11 @@ public class FormReservation extends AppCompatActivity {
 
     private static final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnm";
 
+    /**
+     * method untuk men-generate string random untuk dijadikan pass code
+     * @param sizeOfRandomString
+     * @return
+     */
     public String getRandomString(final int sizeOfRandomString)
     {
         final Random random=new Random();
@@ -117,12 +143,20 @@ public class FormReservation extends AppCompatActivity {
         return sb.toString();
     }
 
+    /**
+     * digunakan untuk mengecek koneksi internet, versi ini belum diimplementasikan
+     * @return
+     */
     public boolean checkNetworkConnection(){
         ConnectivityManager connectivityManager=(ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo= connectivityManager.getActiveNetworkInfo();
         return (networkInfo!=null && networkInfo.isConnected());
     }
 
+    /**
+     * method digunakan untuk mengirim data ke server
+     * @param url
+     */
     public void saveDataFmServer(String url){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

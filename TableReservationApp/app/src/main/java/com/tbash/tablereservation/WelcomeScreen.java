@@ -10,6 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
+/**
+ * Class berisi tombol 3 menu utama:menu ke cek reservasi, login karyawan, dan cek status reservasi
+ */
 public class WelcomeScreen extends AppCompatActivity {
 
     Button startReservation_btn,startKaryawan_btn, cekStatus_btn;
@@ -46,16 +50,25 @@ public class WelcomeScreen extends AppCompatActivity {
 
     }
 
+    /**
+     * method untuk membuka tampilan menu awal reservasi yaitu menu pemilihan tanggal dan waktu
+     */
     public void openDateTimeAct(){
         Intent intentForDateTime=new Intent(this, DateTimeReservation.class);
         startActivity(intentForDateTime);
     }
 
+    /**
+     * method untuk membuka tampilan login karyawan untuk melakukan validasi reservasi
+     */
     public void openLoginKarywanAct(){
         Intent intentForKaryawanLog=new Intent(this, LoginKaryawan.class);
         startActivity(intentForKaryawanLog);
     }
 
+    /**
+     * method untuk membuka tampilan input pass code untuk mengecek status reservasi
+     */
     public void openPassCodeAct(){
         Intent intentForPassCode=new Intent(this, PassCodeLogin.class);
         startActivity(intentForPassCode);

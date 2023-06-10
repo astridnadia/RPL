@@ -26,6 +26,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * class untuk mengetahui status pengajuan reservasi
+ */
 public class TableResevationStatus extends AppCompatActivity {
 
     Button table1Reserv_btn,table2Reserv_btn ;
@@ -82,9 +85,10 @@ public class TableResevationStatus extends AppCompatActivity {
         });
     }
 
+    /**
+     * method untuk mengecek status ketersediaan meja, tidak digunakan pada versi v2
+     */
     public void cekStatus(){
-//        table1Status=statusMejaB("table 1", date,time);
-//        table2Status=statusMejaB("table 2", date,time);
 
         if(table1Status==false){
             table1Reserv_btn.setEnabled(false);
@@ -98,6 +102,9 @@ public class TableResevationStatus extends AppCompatActivity {
 
     }
 
+    /**
+     * method untuk menuju ke aktifitas selanjutnya yaitu mengisi formulir data diri
+     */
     public void openFormReservStatAct(){
         Intent intentForFormReservStat=new Intent(this, FormReservation.class);
         intentForFormReservStat.putExtra("tableNumber",tableChoose);
@@ -107,6 +114,13 @@ public class TableResevationStatus extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * method digunakan untuk mendapatkan status ketersediaan meja dari database lokal, tidak digunakan pada versi v2
+     * @param nomorMeja
+     * @param date
+     * @param time
+     * @return
+     */
     public boolean statusMejaB(String nomorMeja, String date, String time){
         Cursor data=mDataBaseHelper.getTableStatus(nomorMeja, date, time);
         if (data.getCount()>0){
@@ -116,6 +130,12 @@ public class TableResevationStatus extends AppCompatActivity {
         }
     }
 
+    /**
+     * method digunakan untuk mendapatkan status ketersediaan meja dari database server
+     * @param url
+     * @param date
+     * @param time
+     */
     public void checkStatusTBServer(String url, String date, String time){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -145,26 +165,6 @@ public class TableResevationStatus extends AppCompatActivity {
                     }else {
                         table2Status=true;
                     }
-
-
-
-//                    if(id_reservasi!=null){
-//                        if(nomorMeja.equals("table 1")){
-//                            table1Status=false;
-//                        }
-//                        if(nomorMeja.equals("table 2")){
-//                            table2Status=false;
-//                        }
-//                    }else {
-//                        if(nomorMeja.equals("table 1")){
-//                            table1Status=true;
-//                        }
-//                        if(nomorMeja.equals("table 2")){
-//                            table2Status=true;
-//                        }
-//                    }
-
-                    //Toast.makeText(PassCodeLogin.this,status,Toast.LENGTH_SHORT).show();
 
                 }catch (JSONException e){
                     e.printStackTrace();

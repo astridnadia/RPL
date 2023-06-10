@@ -17,6 +17,9 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+/**
+ * class untuk melakukan input hari dan waktu reservasi
+ */
 public class DateTimeReservation extends AppCompatActivity {
 
     Button pickDate_btn,pickTime_btn,cekDT_btn;
@@ -71,12 +74,15 @@ public class DateTimeReservation extends AppCompatActivity {
                     openTableReservAct();
                 }
 
-                //openTableReservAct();
             }
         });
 
     }
 
+
+    /**
+     * Method untuk membuka tampilan pemilihan hari reservasi
+     */
     public void openDialogDate(){
         DatePickerDialog dialogDate= new DatePickerDialog(this,new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -92,6 +98,9 @@ public class DateTimeReservation extends AppCompatActivity {
 
     }
 
+    /**
+     * method untuk membuka tampilan pemilihan waktu/jam reservasi
+     */
     public void openDialogTime(){
         TimePickerDialog dialogTime= new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -104,6 +113,9 @@ public class DateTimeReservation extends AppCompatActivity {
         dialogTime.getButton(DatePickerDialog.BUTTON_POSITIVE).setBackgroundColor(Color.parseColor("#046C42"));
     }
 
+    /**
+     * method untuk membuka tampilan/aktivitas selanjutnya yaitu memilih meja reservasi
+     */
     public void openTableReservAct(){
         Intent intentForTableReserv=new Intent(this, TableResevationStatus.class);
         intentForTableReserv.putExtra("date",dateReserv);

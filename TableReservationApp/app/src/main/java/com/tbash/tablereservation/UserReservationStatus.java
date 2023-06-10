@@ -24,6 +24,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * class untuk mengetahui status reservasi yang telah diajukan
+ */
 public class UserReservationStatus extends AppCompatActivity {
 
     TextView userStatus_tv, userTable_tv, userDate_tv,userTime_tv, userName_tv, userKontak_tv, userUangMuka_tv, passCodeTV;
@@ -63,6 +66,9 @@ public class UserReservationStatus extends AppCompatActivity {
 
     }
 
+    /**
+     * method untuk mendapatkan data status reservasi dari database lokal, tidak digunakan pada versi 2
+     */
     public void generateDataReserver(){
         Cursor data=mDataBaseHelper.getDataUser(passReserve);
         if (data.getCount()>0){
@@ -89,6 +95,11 @@ public class UserReservationStatus extends AppCompatActivity {
 
     }
 
+    /**
+     * digunakan untuk mendapatkan data status reservasi dari database server
+     * @param url
+     * @param passButton
+     */
     public void generateStatusFMServer(String url, String passButton){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
