@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "com.tbash.tablereservation",
-  "variantName": "processReleaseResources",
+  "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",

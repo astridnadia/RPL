@@ -19,7 +19,7 @@
         <activity android:name=".FormReservation" />
         <activity android:name=".DateTimeReservation" />
         <activity android:name=".TableResevationStatus" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
