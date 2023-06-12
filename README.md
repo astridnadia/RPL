@@ -3,7 +3,7 @@
 
 # Installation
 install BentoKopiReservasi_v3_Android12.apk in your mobile phone
-if lokal server: make sure to setup environment in <b>Penyiapan Environtment Test - FOLDER<b>
+if lokal server: make sure to setup environment in <b>Penyiapan Environtment Test - FOLDER</b>
 
 # RPL -
 <br> BentoKopiReservasi.apk - app bundle package version 1
