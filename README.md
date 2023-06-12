@@ -9,5 +9,10 @@
 
 # SOURCE CODE JAVA
 <br>TableReservationApp\app\src\main\java\com\tbash\tablereservation
+<br> 
+
+# SYSTEM REQUIREMENT:
+<br>OS: 	ANDROID UP TO 9+ (9, 10, 11, 12, 13)
+
 
 
