@@ -9,13 +9,13 @@
 
 # SOURCE CODE JAVA
 <br>TableReservationApp\app\src\main\java\com\tbash\tablereservation
-<br> DateTimeReservation.java <b>class untuk melakukan input hari dan waktu reservasi <b>
- <br> FormReservation.java <b>class untuk mengisi data diri kelengakapan reservasi<b>
-  <br>LoginKaryawan.java <b>class untuk login karyawan menuju ke aktivitas validasi status reservasi<b>
-  <br>PassCodeLogin.java <b>class untuk melakukan input pass kode yang diterima user untuk mengecek status aktivasi<b>
-  <br>ReservationList.java <b>class untuk melakukan validasi status pengajuan reservasi dari user oleh karyawan<b>
-  <br>TableReservationStatus.java <b>class untuk mengetahui status pengajuan reservasi<b>
-  <br>UserReservationStatus.java <b>class untuk mengetahui status reservasi yang telah diajukan<b>
+<br> DateTimeReservation.java <b>class untuk melakukan input hari dan waktu reservasi </b>
+ <br> FormReservation.java <b>class untuk mengisi data diri kelengakapan reservasi</b>
+  <br>LoginKaryawan.java <b>class untuk login karyawan menuju ke aktivitas validasi status reservasi</b>
+  <br>PassCodeLogin.java <b>class untuk melakukan input pass kode yang diterima user untuk mengecek status aktivasi</b>
+  <br>ReservationList.java <b>class untuk melakukan validasi status pengajuan reservasi dari user oleh karyawan</b>
+  <br>TableReservationStatus.java <b>class untuk mengetahui status pengajuan reservasi</b>
+  <br>UserReservationStatus.java <b>class untuk mengetahui status reservasi yang telah diajukan</b>
 
 # SYSTEM REQUIREMENT:
 <br>OS: 	ANDROID UP TO 9+ (9, 10, 11, 12, 13)
