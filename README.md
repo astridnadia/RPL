@@ -1,3 +1,10 @@
+# SYSTEM REQUIREMENT:
+<br>OS: 	ANDROID UP TO 9+ (9, 10, 11, 12, 13)
+
+# Installation
+install BentoKopiReservasi_v3_Android12.apk in your mobile phone
+if lokal server: make sure to setup environment in <b>Penyiapan Environtment Test - FOLDER<b>
+
 # RPL -
 <br> BentoKopiReservasi.apk - app bundle package version 1
 <br>BentoKopiReservasi_v2.apk - app bundle package version 2 (fixing bug in Pass Code Menu)
@@ -17,8 +24,7 @@
   <br>TableReservationStatus.java <b>class untuk mengetahui status pengajuan reservasi</b>
   <br>UserReservationStatus.java <b>class untuk mengetahui status reservasi yang telah diajukan</b>
 
-# SYSTEM REQUIREMENT:
-<br>OS: 	ANDROID UP TO 9+ (9, 10, 11, 12, 13)
+
 
 
 
